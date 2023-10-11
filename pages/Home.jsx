@@ -1,10 +1,11 @@
 import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { FriendsIcon, IconBook, IconHome, IconWork } from "../assets";
 import Card from "../components/Card";
 import Carousel from "../components/Carousel";
 import {
+  ACCOUNT,
   TRAINING,
-  WARNA_ABU_ABU,
   WARNA_SEKUNDER,
   WARNA_UTAMA,
 } from "../utils/constant";
@@ -13,20 +14,44 @@ const Home = () => {
   return (
     <ScrollView>
       <View style={styles.page}>
-        <Text style={styles.hi}>Hi! Zidane</Text>
+        <Text style={styles.hi}>Hi! {ACCOUNT.userName}</Text>
         <Text style={styles.text}>HR SUPER APPS</Text>
         <Text style={styles.subtext}>
           satu tempat untuk penuhi seluruh kebutuhanmu!
         </Text>
         <View style={styles.featureList}>
-          <View style={styles.feature}></View>
-          <View style={styles.feature}></View>
-          <View style={styles.feature}></View>
-          <View style={styles.feature}></View>
-          <View style={styles.feature}></View>
-          <View style={styles.feature}></View>
-          <View style={styles.feature}></View>
-          <View style={styles.feature}></View>
+          <View style={styles.feature}>
+            <FriendsIcon />
+            <Text>Social</Text>
+          </View>
+          <View style={styles.feature}>
+            <IconBook />
+            <Text>Learn</Text>
+          </View>
+          <View style={styles.feature}>
+            <IconWork />
+            <Text>Work</Text>
+          </View>
+          <View style={styles.feature}>
+            <IconWork />
+            <Text>Work</Text>
+          </View>
+          <View style={styles.feature}>
+            <FriendsIcon />
+            <Text>Social</Text>
+          </View>
+          <View style={styles.feature}>
+            <IconWork />
+            <Text>Work</Text>
+          </View>
+          <View style={styles.feature}>
+            <IconBook />
+            <Text>Learn</Text>
+          </View>
+          <View style={styles.feature}>
+            <IconWork />
+            <Text>Work</Text>
+          </View>
         </View>
         <Text style={styles.text}>UPCOMING ERAJAYA EVENT</Text>
         <Carousel />
@@ -78,6 +103,9 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
   },
   feature: {
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
     marginTop: 20,
     backgroundColor: WARNA_UTAMA,
     width: 60,

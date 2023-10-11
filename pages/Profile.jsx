@@ -1,6 +1,6 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View, Button } from "react-native";
 import React from "react";
-import { WARNA_SEKUNDER, WARNA_UTAMA } from "../utils/constant";
+import { ACCOUNT, WARNA_SEKUNDER, WARNA_UTAMA } from "../utils/constant";
 import { ProfilePic } from "../assets";
 
 const Profile = () => {
@@ -8,11 +8,12 @@ const Profile = () => {
     <View style={styles.page}>
       <View style={styles.container}>
         <Image source={ProfilePic} style={styles.profileImage} />
-        <Text style={styles.userName}>Muhammad Zidane</Text>
-        <Text style={styles.userEmail}>dane@example.com</Text>
+        <Text style={styles.userName}>{ACCOUNT.fullName}</Text>
+        <Text style={styles.userEmail}>{ACCOUNT.email}</Text>
         <Text style={styles.userBio}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </Text>
+        <Button title="Update Profile" />
       </View>
     </View>
   );

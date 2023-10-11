@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Alert,
   Button,
@@ -7,20 +8,15 @@ import {
   TextInput,
   View,
 } from "react-native";
-import React from "react";
-import { useState } from "react";
 import { QleapLogo } from "../assets";
-import { WARNA_SEKUNDER, WARNA_UTAMA } from "../utils/constant";
+import { ACCOUNT, WARNA_UTAMA } from "../utils/constant";
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    const validEmail = "dane@gmail.com";
-    const validPassword = "password";
-
-    if (email === validEmail && password === validPassword) {
+    if (email === ACCOUNT.email && password === ACCOUNT.password) {
       navigation.replace("App");
     } else {
       Alert.alert("Login Failed", "Invalid username or password.");
@@ -48,11 +44,7 @@ const Login = ({ navigation }) => {
           secureTextEntry={true}
         />
         <View style={{ marginTop: 20 }}>
-          <Button
-            title="Sign in"
-            onPress={handleLogin}
-            style={{ backgroundColor: WARNA_SEKUNDER }}
-          />
+          <Button title="Sign in" onPress={handleLogin} />
         </View>
       </View>
     </View>
